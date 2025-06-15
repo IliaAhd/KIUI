@@ -1,0 +1,36 @@
+@import "tailwindcss";
+
+
+
+
+main{
+  @apply flex gap-1
+}
+/* components */
+/* menu */
+.menu-btn {
+  margin: 0.7rem 0.2rem;
+  cursor: pointer;
+}
+.menu-btn,
+.menu-btn::after,
+.menu-btn::before {
+  content: "";
+  background: #000;
+  width: 2rem;
+  height: 0.15rem;
+  border-radius: 1rem;
+  position: relative;
+}
+.menu-btn::after {
+  position: absolute;
+  bottom: 0.5rem;
+}
+.menu-btn::before {
+  position: absolute;
+  top: 0.5rem;
+}
+/* menu modifier */
+.menu-btn--show {
+  left: 50%;
+}

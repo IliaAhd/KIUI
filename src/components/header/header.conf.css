@@ -1,0 +1,21 @@
+body {
+  /* font-family: Georgia, 'Times New Roman', Times, serif; */
+}
+.menu-background {
+  background: #400825;
+}
+.menu-main-title {
+  color: rgb(222, 135, 200);
+}
+.menu-item {
+  color: rgb(84, 179, 226);
+}
+.menu-item:hover {
+  color: rgb(213, 221, 228);
+}
+#mobile-menu {
+  background: #e1e2e1;
+}
+#hamburger-btn {
+  color: rgb(222, 135, 200);
+}

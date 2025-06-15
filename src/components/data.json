@@ -1,0 +1,10 @@
+{
+  "menu": {
+    "title": ["KIUI"],
+    "items": ["Home", "products", "contact", "GitHub"],
+    "links": ["#Home", "#products", "#contact", "https://github.com/alirezaabbasi-dev"],
+    "submenu":{
+
+    }
+  }
+}
