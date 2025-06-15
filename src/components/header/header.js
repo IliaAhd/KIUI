@@ -55,7 +55,7 @@ class HeaderType1 extends HTMLElement {
 
           <!-- Logo -->
           <div>
-            <h1 class="menu-main-title text-xl font-bold text-blue-600">
+            <h1 class="menu-main-title text-xl font-bold transition-all text-black">
               <a href="./index.html">${title}</a>
             </h1>
           </div>
@@ -72,7 +72,7 @@ class HeaderType1 extends HTMLElement {
           </div>
 
           <!-- Desktop Menu -->
-          <ul class=" menuItemsWrapper hidden md:flex gap-6 text-gray-700 font-medium">
+          <ul class=" menuItemsWrapper hidden md:flex gap-6 text-gray-700 font-medium *:transition-all">
             ${menuHTML}
           </ul>
         </div>

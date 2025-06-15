@@ -1,11 +1,23 @@
-body {
-  /* font-family: Georgia, 'Times New Roman', Times, serif; */
+/* to change default header component styles change this classes  */
+/*
+  .menu-background - background of the header
+  .menu-main-title - main title of the header
+  .menu-item - menu items in the header
+  #mobile-menu - mobile menu background
+  #hamburger-btn - hamburger button color
+*/
+
+/* body {
+  font-family: Georgia, "Times New Roman", Times, serif;
 }
 .menu-background {
   background: #400825;
 }
 .menu-main-title {
   color: rgb(222, 135, 200);
+}
+.menu-main-title:hover {
+  color: rgb(213, 221, 228);
 }
 .menu-item {
   color: rgb(84, 179, 226);
@@ -18,4 +30,4 @@ body {
 }
 #hamburger-btn {
   color: rgb(222, 135, 200);
-}
+} */
