@@ -1,22 +1,7 @@
 "use strict";
+import {getMenuData} from "../fetchData.js"
 
 const $ = document;
-
-/**
- * Fetches menu data from JSON file
- * @returns {Promise<Object|null>}
- */
-async function getMenuData() {
-  try {
-    const response = await fetch("./src/components/data.json");
-    if (!response.ok) throw new Error("Failed to fetch menu data");
-    const result = await response.json();
-    return result.menu;
-  } catch (error) {
-    console.error("Error loading menu:", error);
-    return null;
-  }
-}
 
 /**
  * Toggles mobile menu and icon state with fade effect
@@ -74,7 +59,7 @@ class HeaderType1 extends HTMLElement {
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
 
           <!-- Logo -->
-          <h1 class="menu-main-title text-xl font-bold text-black">
+          <h1 class="menu-main-title text-xl font-bold text-black transition-colors">
             <a href="./index.html">${title}</a>
           </h1>
 
@@ -165,7 +150,7 @@ class HeaderType2 extends HTMLElement {
                 <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
               </svg>
             </button>
-            <a href="./index.html" class="menu-main-title text-xl font-bold">${title}</a>
+            <a href="./index.html" class="menu-main-title transition-colors text-xl font-bold">${title}</a>
           </div>
 
           <!-- Center Menu (Desktop) -->
