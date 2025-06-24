@@ -93,5 +93,74 @@ class FooterType1 extends HTMLElement {
     `;
   }
 }
-// TODO: Icon for social
+
+class FooterType2 extends HTMLElement {
+  async connectedCallback() {
+    const data = await fetchData();
+    if (!data) return;
+
+    this.render(data.footer);
+  }
+
+  render(footer) {
+    this.innerHTML = `
+    <footer class="bg-gray-900 text-gray-200 py-12">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-10">
+          <h2 class="text-3xl font-extrabold text-white">${footer.title}</h2>
+          <p class="mt-2 text-sm text-gray-400">${footer.description}</p>
+        </div>
+
+        <!-- Newsletter -->
+        <div class="flex flex-col sm:flex-row justify-center items-center gap-4 mb-10">
+          <input
+            type="email"
+            placeholder="Enter your email"
+            class="w-full sm:w-80 px-4 py-2 rounded-md text-slate-300 outline-1 focus:outline-blue-600"
+          />
+          <button
+            class="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-2 rounded-md transition duration-200"
+          >
+            Subscribe
+          </button>
+        </div>
+
+        <!-- Links -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-10 text-center md:text-left border-t border-gray-700 pt-10">
+          ${Object.values(footer.footerItems)
+            .map(
+              (col) => `
+            <div>
+              <h3 class="text-lg font-semibold mb-4">${col.title}</h3>
+              <ul class="space-y-2 text-sm">
+                ${col.items
+                  .map(
+                    (item, i) =>
+                      `<li><a href="${col.links[i]}" class="hover:underline">${item}</a></li>`
+                  )
+                  .join("")}
+              </ul>
+            </div>
+          `
+            )
+            .join("")}
+        </div>
+
+        <!-- Bottom Social -->
+        <div class="mt-12 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500 border-t border-gray-700 pt-6 gap-4">
+          <p>&copy; ${new Date().getFullYear()} ${footer.title}. All rights reserved.</p>
+          <div class="flex gap-4">
+            <a href="#" class="hover:text-blue-500">Telegram</a>
+            <a href="#" class="hover:text-blue-400">Twitter</a>
+            <a href="#" class="hover:text-pink-500">Instagram</a>
+            <a href="#" class="hover:text-gray-400">Others</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+    `;
+  }
+}
+
 customElements.define("footer-type-1", FooterType1);
+customElements.define("footer-type-2", FooterType2);
