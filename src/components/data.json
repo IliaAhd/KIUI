@@ -1,13 +1,15 @@
 {
-  "menu": {
-    "title": ["KIUI"],
-    "items": ["Home", "products", "contact", "GitHub"],
-    "links": [
-      "#Home",
-      "#products",
-      "#contact",
-      "https://github.com/alirezaabbasi-dev"
-    ],
+  "data": {
+    "menu": {
+      "title": ["KIUI"],
+      "items": ["Home", "products", "contact", "GitHub"],
+      "links": [
+        "#Home",
+        "#products",
+        "#contact",
+        "https://github.com/alirezaabbasi-dev"
+      ]
+    },
     "footer": {
       "title": "KIUI",
       "description": "KIUI is a modern UI design system to build fast and responsive web interfaces.",

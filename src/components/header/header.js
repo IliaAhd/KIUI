@@ -1,5 +1,5 @@
 "use strict";
-import {getMenuData} from "../fetchData.js"
+import { fetchData } from "../fetchData.js";
 
 const $ = document;
 
@@ -38,18 +38,17 @@ function toggleMobileMenu(menuElement, iconWrapper) {
 
 class HeaderType1 extends HTMLElement {
   async connectedCallback() {
-    const menu = await getMenuData();
-    if (!menu) return;
-
-    const menuHTML = menu.items
+    const data = await fetchData();
+    if (!data) return;
+    const menuHTML = data.menu.items
       .map(
         (item) =>
           `<li class="menu-item"><a class="transition-colors">${item}</a></li>`
       )
       .join("");
 
-    this.render(menu.title, menuHTML);
-    this.setLinks(menu.links);
+    this.render(data.menu.title, menuHTML);
+    this.setLinks(data.menu.links);
     this.setupMobileToggle();
   }
 
@@ -118,21 +117,19 @@ class HeaderType1 extends HTMLElement {
 }
 class HeaderType2 extends HTMLElement {
   async connectedCallback() {
-    const menu = await getMenuData();
-    if (!menu) return;
-
-    const menuHTML = menu.items
+    const data = await fetchData();
+    if (!data) return;
+    const menuHTML = data.menu.items
       .map(
         (item) =>
           `<li class="menu-item"><a class="transition-colors">${item}</a></li>`
       )
       .join("");
 
-    this.render(menu.title, menuHTML);
-    this.setLinks(menu.links);
+    this.render(data.menu.title, menuHTML);
+    this.setLinks(data.menu.links);
     this.setupMobileToggle();
   }
-
   render(title, menuHTML) {
     this.innerHTML = `
       <nav class="menu-background bg-gray-900 text-white fixed top-0 left-0 w-full z-50 shadow">

@@ -1,13 +1,11 @@
-import { getFooterData } from "../fetchData.js";
+import { fetchData } from "../fetchData.js";
 
 class FooterType1 extends HTMLElement {
   async connectedCallback() {
-    const data = await getFooterData();
+    const data = await fetchData();
     if (!data) return;
 
     this.render(data.footer);
-
-    console.log(data.footer);
   }
 
   render(footer) {
