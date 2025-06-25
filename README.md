@@ -23,5 +23,5 @@ To run the project locally:
 git clone https://github.com/alirezaabbasi-dev/KIUI.git
 cd KIUI
 npm install
-npm run build
+npm run dev:css
 ```
