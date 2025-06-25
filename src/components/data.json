@@ -10,6 +10,8 @@
         "https://github.com/alirezaabbasi-dev"
       ]
     },
+    "main":{
+    },
     "footer": {
       "title": "KIUI",
       "description": "KIUI is a modern UI design system to build fast and responsive web interfaces.",

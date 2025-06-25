@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>KIUI Demo</title>
+  <link rel="shortcut icon" href="./kiui.png" type="image/png">
   <link rel="stylesheet" href="./kiui.min.css">
   <link rel="stylesheet" href="./components.conf.css">
 </head>
@@ -15,7 +16,18 @@
     <header-type-1></header-type-1>
     <!-- <header-type-2></header-type-2> -->
   </header>
-  <main>
+  <main class="my-72 container">
+    <div id="cards-wrapper">
+      <box-card-1 data-title="just title">
+      </box-card-1>
+      <box-card-1 data-img="./kiui.png" data-title="title2" data-price="23">
+
+      </box-card-1>
+      <box-card-1 data-img="./kiui.png" data-button-title="Buy" data-title="title3" data-description="description"
+        data-price="12"></box-card-1>
+      <box-card-1 data-img="./kiui.png" data-title="title4" data-description="description"
+        data-button-title="button" data-button-link="#itsLink"></box-card-1>
+    </div>
   </main>
   <footer>
     <!--* To use one of the components below, uncomment only one  -->
@@ -23,7 +35,7 @@
     <!-- <footer-type-2></footer-type-2> -->
   </footer>
 
-  <script src="./kiui.min.js"></script>
+  <script type="module" src="/kiui.min.js"></script>
 </body>
 
 </html>

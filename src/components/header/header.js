@@ -132,7 +132,7 @@ class HeaderType2 extends HTMLElement {
   }
   render(title, menuHTML) {
     this.innerHTML = `
-      <nav class="menu-background bg-gray-900 text-white fixed top-0 left-0 w-full z-50 shadow">
+      <nav class="menu-background bg-slate-900 text-white fixed top-0 left-0 w-full z-50 shadow">
         <div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
 
           <!-- Left: Hamburger + Logo -->

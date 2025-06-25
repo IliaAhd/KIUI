@@ -13,7 +13,7 @@ A minimal and customizable Tailwind-based UI component library for modern web pr
 ## 📦 Installation
 
 ```bash
-npm i @kiyan-abbasi/kiui
+npm i kiui-kit
 ```
 
 ## 🛠️ Development

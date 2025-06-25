@@ -1,11 +1,14 @@
 @import "tailwindcss";
 
-
-
-
-main{
-  @apply flex gap-1
+main {
+  @apply flex my-24;
 }
+@layer utilities {
+  .container {
+    margin-inline: auto;
+  }
+}
+
 /* components */
 /* menu */
 .menu-btn {
@@ -30,7 +33,11 @@ main{
   position: absolute;
   top: 0.5rem;
 }
-/* menu modifier */
+/* Main */
+#cards-wrapper {
+  @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mx-auto;
+}
+/* modifier */
 .menu-btn--show {
   left: 50%;
 }
