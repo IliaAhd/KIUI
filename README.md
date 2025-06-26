@@ -162,8 +162,6 @@ npm run dev:css
   Edit the `components.conf.css` file and **uncomment** the section you want to modify.
 - You can apply your own color palette, spacing, fonts, etc.
 
-> Tip: Apply a root-level class like `theme-kiui` on `<body>` to manage themes more cleanly.
-
 ---
 
 ## 🌐 Browser Support
