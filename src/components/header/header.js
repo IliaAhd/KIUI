@@ -46,13 +46,20 @@ class HeaderType1 extends HTMLElement {
           `<li class="menu-item"><a class="transition-colors">${item}</a></li>`
       )
       .join("");
+    const menuMobileHTML = data.menu.items
+      .map(
+        (item) =>
+          `<li class="menu-mobile-item"><a class="transition-colors">${item}</a></li>`
+      )
+      .join("");
 
-    this.render(data.menu.title, menuHTML);
-    this.setLinks(data.menu.links);
+    this.render(data.menu.title, menuHTML, menuMobileHTML);
+    this.setDesktopLinks(data.menu.links);
+    this.setMobileLinks(data.menu.links);
     this.setupMobileToggle();
   }
 
-  render(title, menuHTML) {
+  render(title, menuHTML, menuMobileHTML) {
     this.innerHTML = `
       <nav class="menu-background bg-white shadow-md fixed w-full top-0 left-0 z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
@@ -85,15 +92,21 @@ class HeaderType1 extends HTMLElement {
         <!-- Mobile Menu -->
         <div id="mobile-menu" class="md:hidden hidden fixed top-16 right-0 w-2/3 h-full bg-white shadow-lg px-6 py-4 flex-col gap-4 m-auto text-center">
           <ul class="flex flex-col gap-4 text-gray-800 font-semibold">
-            ${menuHTML}
+            ${menuMobileHTML}
           </ul>
         </div>
       </nav>
     `;
   }
 
-  setLinks(links) {
+  setDesktopLinks(links) {
     const allLinks = this.querySelectorAll(".menu-item a");
+    allLinks.forEach((a, index) => {
+      a.setAttribute("href", links[index] || "#");
+    });
+  }
+  setMobileLinks(links) {
+    const allLinks = this.querySelectorAll(".menu-mobile-item a");
     allLinks.forEach((a, index) => {
       a.setAttribute("href", links[index] || "#");
     });
@@ -125,12 +138,19 @@ class HeaderType2 extends HTMLElement {
           `<li class="menu-item"><a class="transition-colors">${item}</a></li>`
       )
       .join("");
+    const menuMobileHTML = data.menu.items
+      .map(
+        (item) =>
+          `<li class="menu-mobile-item"><a class="transition-colors">${item}</a></li>`
+      )
+      .join("");
 
-    this.render(data.menu.title, menuHTML);
+    this.render(data.menu.title, menuHTML, menuMobileHTML);
     this.setLinks(data.menu.links);
+    this.setMobileLinks(data.menu.links);
     this.setupMobileToggle();
   }
-  render(title, menuHTML) {
+  render(title, menuHTML, menuMobileHTML) {
     this.innerHTML = `
       <nav class="menu-background bg-slate-900 text-white fixed top-0 left-0 w-full z-50 shadow">
         <div class="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
@@ -170,7 +190,7 @@ class HeaderType2 extends HTMLElement {
         <!-- Sidebar Menu (Mobile) -->
         <div id="mobile-menu" class="fixed top-0 right-0 w-64 h-full bg-white text-gray-800 shadow-lg px-6 py-8 transform translate-x-full transition-transform duration-300 ease-in md:hidden z-50">
           <ul class="flex flex-col gap-6 font-semibold text-base">
-            ${menuHTML}
+            ${menuMobileHTML}
           </ul>
         </div>
       </nav>
@@ -179,6 +199,12 @@ class HeaderType2 extends HTMLElement {
 
   setLinks(links) {
     const allLinks = this.querySelectorAll(".menu-item a");
+    allLinks.forEach((a, index) => {
+      a.setAttribute("href", links[index] || "#");
+    });
+  }
+  setMobileLinks(links) {
+    const allLinks = this.querySelectorAll(".menu-mobile-item a");
     allLinks.forEach((a, index) => {
       a.setAttribute("href", links[index] || "#");
     });

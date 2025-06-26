@@ -10,16 +10,16 @@ class FooterType1 extends HTMLElement {
 
   render(footer) {
     this.innerHTML = `
-    <div class="bg-gray-100 dark:bg-gray-900 text-gray-700 dark:text-gray-300 pt-10">
+    <div class="footer bg-gray-100 dark:bg-gray-900 text-gray-700 dark:text-gray-300 pt-10">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <!-- Top  -->
       <div class="grid grid-cols-1 md:grid-cols-4 gap-8 pb-10 border-b border-gray-300 dark:border-gray-700">
         <!-- Logo + Description  -->
         <div>
-          <h2 class="text-2xl font-bold text-gray-800 dark:text-white">${
+          <h2 class="footer-title text-2xl font-bold text-gray-800 dark:text-white">${
             footer.title
           }</h2>
-          <p class="mt-4 text-sm text-gray-600 dark:text-gray-400">${
+          <p class="footer-description mt-4 text-sm text-gray-600 dark:text-gray-400">${
             footer.description
           }</p>
         </div>
@@ -104,11 +104,11 @@ class FooterType2 extends HTMLElement {
 
   render(footer) {
     this.innerHTML = `
-    <footer class="bg-gray-900 text-gray-200 py-12">
+    <div class="footer bg-gray-900 text-gray-200 py-12">
       <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-10">
-          <h2 class="text-3xl font-extrabold text-white">${footer.title}</h2>
-          <p class="mt-2 text-sm text-gray-400">${footer.description}</p>
+          <h2 class="footer-title text-3xl font-extrabold text-white">${footer.title}</h2>
+          <p class="footer-description mt-2 text-sm text-gray-400">${footer.description}</p>
         </div>
 
         <!-- Newsletter -->
@@ -116,10 +116,10 @@ class FooterType2 extends HTMLElement {
           <input
             type="email"
             placeholder="Enter your email"
-            class="w-full sm:w-80 px-4 py-2 rounded-md text-slate-300 outline-1 focus:outline-blue-600"
+            class="input-email w-full sm:w-80 px-4 py-2 rounded-md text-slate-300 outline-1 focus:outline-blue-600"
           />
           <button
-            class="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-2 rounded-md transition duration-200"
+            class="footer-btn-subscribe bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-2 rounded-md transition duration-200"
           >
             Subscribe
           </button>
@@ -147,7 +147,7 @@ class FooterType2 extends HTMLElement {
         </div>
 
         <!-- Bottom Social -->
-        <div class="mt-12 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500 border-t border-gray-700 pt-6 gap-4">
+        <div class="footer-bottom-social mt-12 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500 border-t border-gray-700 pt-6 gap-4">
           <p>&copy; ${new Date().getFullYear()} ${footer.title}. All rights reserved.</p>
           <div class="flex gap-4">
             <a href="#" class="hover:text-blue-500">Telegram</a>
@@ -157,7 +157,7 @@ class FooterType2 extends HTMLElement {
           </div>
         </div>
       </div>
-    </footer>
+    </div>
     `;
   }
 }
