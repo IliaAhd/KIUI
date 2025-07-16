@@ -107,8 +107,12 @@ class FooterType2 extends HTMLElement {
     <div class="footer bg-gray-900 text-gray-200 py-12">
       <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-10">
-          <h2 class="footer-title text-3xl font-extrabold text-white">${footer.title}</h2>
-          <p class="footer-description mt-2 text-sm text-gray-400">${footer.description}</p>
+          <h2 class="footer-title text-3xl font-extrabold text-white">${
+            footer.title
+          }</h2>
+          <p class="footer-description mt-2 text-sm text-gray-400">${
+            footer.description
+          }</p>
         </div>
 
         <!-- Newsletter -->
@@ -148,7 +152,9 @@ class FooterType2 extends HTMLElement {
 
         <!-- Bottom Social -->
         <div class="footer-bottom-social mt-12 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500 border-t border-gray-700 pt-6 gap-4">
-          <p>&copy; ${new Date().getFullYear()} ${footer.title}. All rights reserved.</p>
+          <p>&copy; ${new Date().getFullYear()} ${
+      footer.title
+    }. All rights reserved.</p>
           <div class="flex gap-4">
             <a href="#" class="hover:text-blue-500">Telegram</a>
             <a href="#" class="hover:text-blue-400">Twitter</a>
@@ -162,5 +168,64 @@ class FooterType2 extends HTMLElement {
   }
 }
 
+class FooterType3 extends HTMLElement {
+  async connectedCallback() {
+    const data = await fetchData();
+    if (!data) return;
+
+    this.render(data.footer);
+  }
+
+  render({ title, description, footerItems }) {
+    const { item1, item2 } = footerItems;
+
+    this.innerHTML = `
+    <footer class="bg-[#0b1d26] text-white py-16 text-sm">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between lg:flex-row flex-col space-y-4 lg:space-y-0">
+
+        <div class="flex-2/4 flex flex-col justify-between space-y-6">
+          <div class="space-y-4">
+            <h2 class="text-2xl">${title}</h2>
+            <p class="w-full md:w-1/2">${description}</p>
+          </div>
+
+          <p class="text-gray-400">Copyright ${new Date().getFullYear()} ${title}, Inc. Terms & Privacy</p>
+        </div>
+
+        <div class="flex-1/4 flex justify-between flex-col sm:flex-row gap-4">
+          <div>
+            <h3 class="text-lg text-amber-200 font-bold">More on The ${
+              item1.title
+            }</h3>
+            <ul class="space-y-3 mt-4">
+              ${item1.items
+                .map(
+                  (item, i) => `<li><a href=${item1.links[i]}>${item}</a></li>`
+                )
+                .join("")}
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="text-lg text-amber-200 font-bold">More on The ${
+              item2.title
+            }</h3>
+            <ul class="space-y-3 mt-4">
+              ${item2.items
+                .map(
+                  (item, i) => `<li><a href=${item2.links[i]}>${item}</a></li>`
+                )
+                .join("")}
+            </ul>
+          </div>
+        
+        </div>
+      </div>
+    </footer>    
+    `;
+  }
+}
+
 customElements.define("footer-type-1", FooterType1);
 customElements.define("footer-type-2", FooterType2);
+customElements.define("footer-type-3", FooterType3);
