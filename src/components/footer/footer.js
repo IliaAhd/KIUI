@@ -26,42 +26,42 @@ class FooterType1 extends HTMLElement {
 
         <!-- Links  -->
         <div>
-          <h3 class="text-lg font-semibold mb-4">${
+          <h3 class="text-lg font-semibold mb-4 footer-item-title">${
             footer.footerItems.item1.title
           }</h3>
           <ul class="space-y-2 text-sm">
           ${footer.footerItems.item1.items
             .map(
               (item, index) =>
-                `<li><a href="${footer.footerItems.item1.links[index]}" class="hover:underline">${item}</a></li>`
+                `<li><a href="${footer.footerItems.item1.links[index]}" class="footer-item hover:underline">${item}</a></li>`
             )
             .join("")}
           </ul>
         </div>
 
         <div>
-          <h3 class="text-lg font-semibold mb-4">${
+          <h3 class="text-lg font-semibold mb-4 footer-item-title">${
             footer.footerItems.item2.title
           }</h3>
           <ul class="space-y-2 text-sm">
           ${footer.footerItems.item2.items
             .map(
               (item, index) =>
-                `<li><a href="${footer.footerItems.item2.links[index]}" class="hover:underline">${item}</a></li>`
+                `<li><a href="${footer.footerItems.item2.links[index]}" class="footer-item hover:underline">${item}</a></li>`
             )
             .join("")}
           </ul>
         </div>
 
         <div>
-          <h3 class="text-lg font-semibold mb-4">${
+          <h3 class="text-lg font-semibold mb-4 footer-item-title">${
             footer.footerItems.item3.title
           }</h3>
           <ul class="space-y-2 text-sm">
           ${footer.footerItems.item2.items
             .map(
               (item, index) =>
-                `<li><a href="${footer.footerItems.item2.links[index]}" class="hover:underline">${item}</a></li>`
+                `<li><a href="${footer.footerItems.item2.links[index]}" class="footer-item hover:underline">${item}</a></li>`
             )
             .join("")}
           </ul>
@@ -70,7 +70,7 @@ class FooterType1 extends HTMLElement {
 
       <!-- Bottom  -->
       <div class="flex flex-col md:flex-row justify-between items-center py-6 gap-4">
-        <p class="text-sm">&copy; ${new Date().getFullYear()} ${
+        <p class="text-sm copyright">&copy; ${new Date().getFullYear()} ${
       footer.title
     }. All rights reserved.</p>
         <div class="flex space-x-4">
@@ -135,12 +135,14 @@ class FooterType2 extends HTMLElement {
             .map(
               (col) => `
             <div>
-              <h3 class="text-lg font-semibold mb-4">${col.title}</h3>
+              <h3 class="text-lg font-semibold mb-4 footer-item-title">${
+                col.title
+              }</h3>
               <ul class="space-y-2 text-sm">
                 ${col.items
                   .map(
                     (item, i) =>
-                      `<li><a href="${col.links[i]}" class="hover:underline">${item}</a></li>`
+                      `<li class="footer-item"><a href="${col.links[i]}" class="hover:underline">${item}</a></li>`
                   )
                   .join("")}
               </ul>
@@ -152,7 +154,7 @@ class FooterType2 extends HTMLElement {
 
         <!-- Bottom Social -->
         <div class="footer-bottom-social mt-12 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500 border-t border-gray-700 pt-6 gap-4">
-          <p>&copy; ${new Date().getFullYear()} ${
+          <p class="copyright">&copy; ${new Date().getFullYear()} ${
       footer.title
     }. All rights reserved.</p>
           <div class="flex gap-4">
@@ -180,48 +182,50 @@ class FooterType3 extends HTMLElement {
     const { item1, item2 } = footerItems;
 
     this.innerHTML = `
-    <footer class="bg-[#0b1d26] text-white py-16 text-sm">
+    <footer class="footer bg-[#0b1d26] text-white py-16 text-sm">
       <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between lg:flex-row flex-col space-y-4 lg:space-y-0">
 
         <div class="flex-2/4 flex flex-col justify-between space-y-6">
           <div class="space-y-4">
-            <h2 class="text-2xl">${title}</h2>
-            <p class="w-full md:w-1/2">${description}</p>
+            <h2 class="text-2xl footer-title">${title}</h2>
+            <p class="w-full md:w-1/2 footer-description">${description}</p>
           </div>
 
-          <p class="text-gray-400">Copyright ${new Date().getFullYear()} ${title}, Inc. Terms & Privacy</p>
+          <p class="text-gray-400 copyright">Copyright ${new Date().getFullYear()} ${title}, Inc. Terms & Privacy</p>
         </div>
 
         <div class="flex-1/4 flex justify-between flex-col sm:flex-row gap-4">
           <div>
-            <h3 class="text-lg text-amber-200 font-bold">More on The ${
+            <h3 class="footer-item-title text-lg footer-title text-amber-200 font-bold">More on The ${
               item1.title
             }</h3>
             <ul class="space-y-3 mt-4">
               ${item1.items
                 .map(
-                  (item, i) => `<li><a href=${item1.links[i]}>${item}</a></li>`
+                  (item, i) =>
+                    `<li class="footer-item hover:underline"><a href=${item1.links[i]}>${item}</a></li>`
                 )
                 .join("")}
             </ul>
           </div>
 
           <div>
-            <h3 class="text-lg text-amber-200 font-bold">More on The ${
+            <h3 class="footer-item-title text-lg footer-title text-amber-200 font-bold">More on The ${
               item2.title
             }</h3>
             <ul class="space-y-3 mt-4">
               ${item2.items
                 .map(
-                  (item, i) => `<li><a href=${item2.links[i]}>${item}</a></li>`
+                  (item, i) =>
+                    `<li class="footer-item"><a href=${item2.links[i]}>${item}</a></li>`
                 )
                 .join("")}
             </ul>
           </div>
-        
+
         </div>
       </div>
-    </footer>    
+    </footer>
     `;
   }
 }

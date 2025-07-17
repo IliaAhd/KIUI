@@ -31,7 +31,7 @@
 }
 /* Main */
 #cards-wrapper {
-  @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mx-auto;
+  @apply grid grid-cols-1  lg:grid-cols-3 gap-6 mx-auto;
 }
 /* modifier */
 .menu-btn--show {
