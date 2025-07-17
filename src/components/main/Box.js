@@ -8,7 +8,7 @@ class BoxCard1 extends HTMLElement {
   render(img, title, description, price, buttonTitle, buttonLink) {
     this.innerHTML = `
       <!-- Product Card -->
-      <div class="card w-87 bg-white dark:bg-gray-900 rounded-2xl overflow-hidden shadow-md hover:shadow-xl hover:-translate-y-2 transition duration-300">
+      <div class="card w-full bg-white dark:bg-gray-900 rounded-2xl overflow-hidden shadow-md hover:shadow-xl hover:-translate-y-2 transition duration-300">
         <img class="w-full h-60 object-cover" src="${
           img || "./kiui.png"
         }" alt="${title || "default alt"}" />
