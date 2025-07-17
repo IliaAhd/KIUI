@@ -45,7 +45,7 @@ body {
 
 /* Styles code  */
 /* ============================== Header ============================== */
-body{
+body {
   background-color: #e0e0e0;
 }
 /* .menu-background {
@@ -98,18 +98,35 @@ color: rgb(105, 224, 105);
   color: #cecece;
 }
 .footer-title {
-  color: #630ae8;
+  color: #713ac4;
 }
 .footer-description {
-  color: rgb(255, 255, 255);
+  color: rgb(147, 133, 205);
 }
-.input-email{
+.footer-item-title {
+  color: rgb(186, 158, 224);
+}
+.footer-item {
+  color: rgb(210, 210, 210);
+}
+.input-email {
   background: #471295;
 }
-.footer-btn-subscribe{
+.footer-btn-subscribe {
   background: #711cef;
-} */
-/* Bottom Social  */
-/* .footer-bottom-social{
+}
+.copyright {
+  color: rgb(199, 199, 199);
+}
+.footer-bottom-social {
   color: rgb(215, 146, 240);
 } */
+
+/* Type Writer */
+#KIUI-typewriter {
+  color: rgb(68, 68, 68);
+  margin: 4rem;
+  margin-inline: auto;
+  font-size: 2rem;
+  text-align: center;
+}
