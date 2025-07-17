@@ -2,13 +2,15 @@
   "data": {
     "menu": {
       "title": ["KIUI"],
-      "items": ["Home", "products", "contact", "GitHub"],
+      "items": ["Home", "Docs", "contact", "GitHub"],
       "links": [
         "#Home",
-        "#products",
+        "https://github.com/alirezaabbasi-dev/KIUI?tab=readme-ov-file#-kiui-kit",
         "#contact",
-        "https://github.com/alirezaabbasi-dev"
+        "https://github.com/alirezaabbasi-dev/KIUI"
       ]
+    },
+    "main":{
     },
     "footer": {
       "title": "KIUI",
