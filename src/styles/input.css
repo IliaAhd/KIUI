@@ -1,11 +1,8 @@
 @import "tailwindcss";
 
-main {
-  @apply flex my-24;
-}
 @layer utilities {
   .container {
-    margin-inline: auto;
+    @apply mx-auto my-24;
   }
 }
 
@@ -40,4 +37,28 @@ main {
 /* modifier */
 .menu-btn--show {
   left: 50%;
+}
+/* Effects */
+#KIUI-typewriter {
+  @apply text-slate-700;
+}
+#KIUI-typewriter::after {
+  content: "|";
+  display: inline-block;
+  background: inherit;
+  animation: typeWriterFlicker 1.5s infinite linear;
+}
+@keyframes typeWriterFlicker {
+  0% {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+  50% {
+    opacity: 0.1;
+    transform: scaleY(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scaleY(1);
+  }
 }
