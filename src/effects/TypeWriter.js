@@ -40,3 +40,4 @@ function initKIUITypeWriter(textArray = [], time = 100, pause = 1000) {
 
   typeText(); // Start the cycle
 }
+window.initKIUITypeWriter = initKIUITypeWriter;
