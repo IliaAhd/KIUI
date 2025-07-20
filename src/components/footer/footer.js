@@ -58,10 +58,10 @@ class FooterType1 extends HTMLElement {
             footer.footerItems.item3.title
           }</h3>
           <ul class="space-y-2 text-sm">
-          ${footer.footerItems.item2.items
+          ${footer.footerItems.item3.items
             .map(
               (item, index) =>
-                `<li><a href="${footer.footerItems.item2.links[index]}" class="footer-item hover:underline">${item}</a></li>`
+                `<li><a href="${footer.footerItems.item3.links[index]}" class="footer-item hover:underline">${item}</a></li>`
             )
             .join("")}
           </ul>
