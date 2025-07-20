@@ -69,7 +69,7 @@ You can either clone this repo or copy the following files into your project:
   </header>
   <main class="container">
     <!-- Type Writer -->
-    <div "">
+    <div>
       <h2 id="KIUI-typewriter"></h2>
     </div>
     <div id="cards-wrapper">
