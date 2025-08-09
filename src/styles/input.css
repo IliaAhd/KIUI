@@ -5,6 +5,9 @@
     @apply mx-auto my-24 p-2;
   }
 }
+body {
+  @apply bg-[#d6d6d6] dark:bg-slate-800;
+}
 /* components */
 /* menu */
 .menu-btn {
@@ -39,7 +42,7 @@
 }
 /* Effects */
 #KIUI-typewriter {
-  @apply text-slate-700;
+  @apply m-16 mx-auto text-3xl text-center h-16 text-slate-700 dark:text-slate-100;
 }
 #KIUI-typewriter::after {
   content: "|";
@@ -61,7 +64,10 @@
     transform: scaleY(1);
   }
 }
-
+/* Svg */
+.social-media a svg {
+  @apply size-8 duration-200;
+}
 /* media queries */
 @media screen and (max-width: 480px) {
   #cards-wrapper {
