@@ -8,6 +8,9 @@ body {
     @apply mx-auto my-24 p-2;
   }
 }
+body {
+  @apply bg-[#d6d6d6] dark:bg-slate-800;
+}
 /* components */
 /* menu */
 .menu-btn {
@@ -95,7 +98,10 @@ body {
     transform: scaleY(1);
   }
 }
-
+/* Svg */
+.social-media a svg {
+  @apply size-8 duration-200;
+}
 /* media queries */
 @media screen and (max-width: 480px) {
   #cards-wrapper {
