@@ -58,10 +58,10 @@ class FooterType1 extends HTMLElement {
             footer.footerItems.item3.title
           }</h3>
           <ul class="space-y-2 text-sm">
-          ${footer.footerItems.item2.items
+          ${footer.footerItems.item3.items
             .map(
               (item, index) =>
-                `<li><a href="${footer.footerItems.item2.links[index]}" class="footer-item hover:underline">${item}</a></li>`
+                `<li><a href="${footer.footerItems.item3.links[index]}" class="footer-item hover:underline">${item}</a></li>`
             )
             .join("")}
           </ul>
@@ -179,7 +179,7 @@ class FooterType3 extends HTMLElement {
   }
 
   render({ title, description, footerItems }) {
-    const { item1, item2 } = footerItems;
+    const { item1, item2, item3 } = footerItems;
 
     this.innerHTML = `
     <footer class="footer bg-[#0b1d26] text-white py-16 text-sm">
@@ -217,7 +217,20 @@ class FooterType3 extends HTMLElement {
               ${item2.items
                 .map(
                   (item, i) =>
-                    `<li class="footer-item"><a href=${item2.links[i]}>${item}</a></li>`
+                    `<li class="footer-item hover:underline"><a href=${item2.links[i]}>${item}</a></li>`
+                )
+                .join("")}
+            </ul>
+          </div>
+          <div>
+            <h3 class="footer-item-title text-lg footer-title text-amber-200 font-bold">More on The ${
+              item3.title
+            }</h3>
+            <ul class="space-y-3 mt-4">
+              ${item3.items
+                .map(
+                  (item, i) =>
+                    `<li class="footer-item hover:underline"><a href=${item3.links[i]}>${item}</a></li>`
                 )
                 .join("")}
             </ul>
