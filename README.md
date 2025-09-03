@@ -19,6 +19,7 @@ A lightweight, modern Web Component UI Kit – ready to plug into your HTML proj
 | `data.json`           | Dynamic content used by components           |
 | `index.html`          | Live demo file – test components quickly     |
 | `kiui.png`            | Default image/logo used in cards/headers     |
+| `kiui.typewriter.min` | Type writer Effect                           |
 
 ---
 ## 📦 Installation
@@ -49,48 +50,67 @@ You can either clone this repo or copy the following files into your project:
 
 ```html
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>KiUI Demo</title>
-
-  <!-- CSS Files -->
-  <link rel="stylesheet" href="kiui.min.css" />
-  <link rel="stylesheet" href="components.conf.css" /> <!-- Optional -->
-
-  <!-- Web Component Script -->
-  <script src="kiui.min.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KIUI Demo</title>
+  <link rel="shortcut icon" href="./kiui.png" type="image/png">
+  <link rel="stylesheet" href="./kiui.min.css">
+  <link rel="stylesheet" href="./components.conf.css">
 </head>
-<body>
 
-  <!-- Header -->
+<body>
   <header>
-      <header-type-1></header-type-1>
-      <header-type-2></header-type-2>
-               <!-- ... -->
+    <!--! To use one of the components below, uncomment only one  -->
+    <header-type-1></header-type-1>
+    <!-- <header-type-2></header-type-2> -->
   </header>
-  <!-- Main -->
   <main class="container">
-  <!-- Product Card -->
-      <box-card-1
-        data-img="./kiui.png"
-        data-title="Cool Headphones"
-        data-description="Experience immersive sound quality."
-        data-price="129.99"
-        data-button-title="Buy Now"
-        data-button-link="https://example.com"
-      ></box-card-1>
-               <!-- ... -->
-   </main>
-  <!-- Footer -->
+    <!-- Type Writer -->
+    <div>
+      <h2 id="KIUI-typewriter"></h2>
+    </div>
+    <div id="cards-wrapper">
+      <!-- Boxes -->
+      <box-card-1 data-title="just title">
+      </box-card-1>
+      <box-card-1 data-img="./kiui.png" data-title="title2" data-price="23">
+      </box-card-1>
+      <box-card-1 data-img="./kiui.png" data-button-title="Buy" data-title="title3" data-description="description"
+        data-price="12"></box-card-1>
+      <box-card-1 data-img="./kiui.png" data-title="title4" data-description="description" data-button-title="button"
+        data-button-link="#itsLink"></box-card-1>
+      <!-- Boxes -->
+    </div>
+  </main>
   <footer>
-      <footer-type-1></footer-type-1>
-      <footer-type-2></footer-type-2>
-               <!-- ... -->
+    <!--* To use one of the components below, uncomment only one  -->
+    <footer-type-1></footer-type-1>
+    <!-- <footer-type-2></footer-type-2> -->
+    <!-- <footer-type-3></footer-type-3> -->
   </footer>
+  <script src="./kiui.min.js"></script>
+  <!-- Use KIUI Type Writer -->
+  <script src="./kiui.typewriter.min.js"></script>
+  <script>
+    initKIUITypeWriter(
+      [
+        "Welcome to KIUI",
+        "A lightweight",
+        "and",
+        "Modern Web Component UI Kit.",
+        "Let’s build something amazing together . . . ",
+      ],
+      100, // typing/deleting speed
+      1000 // pause between type/delete
+    );
+  </script>
 </body>
+
 </html>
+
 ```
 
 ---
@@ -104,12 +124,12 @@ Change menu items, links, and footer content by editing `data.json`:
   "data": {
     "menu": {
       "title": ["KIUI"],
-      "items": ["Home", "products", "contact", "GitHub"],
+      "items": ["Home", "Docs", "contact", "GitHub"],
       "links": [
         "#Home",
-        "#products",
+        "https://github.com/alirezaabbasi-dev/KIUI?tab=readme-ov-file#-kiui-kit",
         "#contact",
-        "https://github.com/alirezaabbasi-dev"
+        "https://github.com/alirezaabbasi-dev/KIUI"
       ]
     },
     "main":{

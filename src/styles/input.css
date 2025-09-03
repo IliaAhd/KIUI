@@ -1,14 +1,10 @@
 @import "tailwindcss";
 
-main {
-  @apply flex my-24;
-}
 @layer utilities {
   .container {
-    margin-inline: auto;
+    @apply mx-auto my-24 p-2;
   }
 }
-
 /* components */
 /* menu */
 .menu-btn {
@@ -35,9 +31,40 @@ main {
 }
 /* Main */
 #cards-wrapper {
-  @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mx-auto;
+  @apply grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-3.5;
 }
 /* modifier */
 .menu-btn--show {
   left: 50%;
+}
+/* Effects */
+#KIUI-typewriter {
+  @apply text-slate-700;
+}
+#KIUI-typewriter::after {
+  content: "|";
+  display: inline-block;
+  background: inherit;
+  animation: typeWriterFlicker 1.5s infinite linear;
+}
+@keyframes typeWriterFlicker {
+  0% {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+  50% {
+    opacity: 0.1;
+    transform: scaleY(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scaleY(1);
+  }
+}
+
+/* media queries */
+@media screen and (max-width: 480px) {
+  #cards-wrapper {
+    @apply grid-cols-1;
+  }
 }
